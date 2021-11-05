@@ -2,7 +2,7 @@
   "name": "jpgmoney",
   "version": "1.0.0",
   "author": "Ryan Wiemer <ryan@ryanwiemer.com>",
-  "private": true,
+  "license": "MIT",
   "dependencies": {
     "@mdx-js/loader": "^1.6.22",
     "@next/mdx": "^12.0.2",
@@ -27,7 +27,7 @@
     "lint": "next lint"
   },
   "devDependencies": {
-    "eslint": "8.1.0",
+    "eslint": "<8.0.0",
     "eslint-config-next": "12.0.2"
   }
 }
