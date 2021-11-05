@@ -1,0 +1,33 @@
+{
+  "name": "jpgmoney",
+  "version": "1.0.0",
+  "author": "Ryan Wiemer <ryan@ryanwiemer.com>",
+  "private": true,
+  "dependencies": {
+    "@mdx-js/loader": "^1.6.22",
+    "@next/mdx": "^12.0.2",
+    "axios": "^0.24.0",
+    "bottleneck": "^2.19.5",
+    "date-fns": "^2.25.0",
+    "framer-motion": "^5.2.0",
+    "next": "^12.0.2",
+    "next-compose-plugins": "^2.2.1",
+    "next-seo": "^4.28.1",
+    "plaiceholder": "^2.2.0",
+    "popmotion": "^11.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "sharp": "^0.29.2",
+    "theme-ui": "^0.12.0"
+  },
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "devDependencies": {
+    "eslint": "8.1.0",
+    "eslint-config-next": "12.0.2"
+  }
+}
