@@ -3,6 +3,7 @@ import { Global } from '@emotion/react'
 import { ThemeProvider, styled } from 'theme-ui'
 import { DefaultSeo } from 'next-seo'
 import Head from 'next/head'
+import { GoogleAnalytics } from 'nextjs-google-analytics'
 import Menu from '../components/Menu'
 import Background from '../components/Background'
 import theme from '../lib/theme'
@@ -18,61 +19,64 @@ const App = ({ Component, pageProps, router }) => {
   useEffect(() => window.addEventListener('keydown', handleFirstTab), [])
 
   return (
-    <ThemeProvider theme={theme}>
-      <DefaultSeo
-        titleTemplate="%s — JPG Money"
-        defaultTitle="JPG Money 💰"
-        description="JPG Money is a virtual gallery of some of the most expensive and sought after NFTs."
-        canonical="https://jpgmoney.vercel.app"
-        additionalLinkTags={[
-          {
-            rel: 'icon',
-            href: '/favicon.ico',
-          },
-          {
-            rel: 'apple-touch-icon',
-            href: '/apple-touch-icon.png',
-            sizes: '180x180',
-          },
-          {
-            rel: 'manifest',
-            href: '/manifest.json',
-          },
-          {
-            name: 'theme-color',
-            content: '#f3f3f3',
-          },
-        ]}
-        openGraph={{
-          type: 'website',
-          url: 'https://jpgmoney.vercel.app',
-          site_name: 'JPGs',
-          images: [
+    <>
+      <GoogleAnalytics />
+      <ThemeProvider theme={theme}>
+        <DefaultSeo
+          titleTemplate="%s — JPG Money"
+          defaultTitle="JPG Money 💰"
+          description="JPG Money is a virtual gallery of some of the most expensive and sought after NFTs."
+          canonical="https://jpgmoney.vercel.app"
+          additionalLinkTags={[
             {
-              url: 'https://jpgmoney.vercel.app/og.jpg',
-              width: 1200,
-              height: 630,
+              rel: 'icon',
+              href: '/favicon.ico',
             },
-          ],
-        }}
-      />
-      <Head>
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+            {
+              rel: 'apple-touch-icon',
+              href: '/apple-touch-icon.png',
+              sizes: '180x180',
+            },
+            {
+              rel: 'manifest',
+              href: '/manifest.json',
+            },
+            {
+              name: 'theme-color',
+              content: '#f3f3f3',
+            },
+          ]}
+          openGraph={{
+            type: 'website',
+            url: 'https://jpgmoney.vercel.app',
+            site_name: 'JPGs',
+            images: [
+              {
+                url: 'https://jpgmoney.vercel.app/og.jpg',
+                width: 1200,
+                height: 630,
+              },
+            ],
+          }}
         />
-        <meta name="theme-color" content="#000000"></meta>
-      </Head>
-      <Global styles={global} />
-      <Menu />
-      <AnimatePresence
-        exitBeforeEnter
-        onExitComplete={() => window.scrollTo(0, 0)}
-      >
-        <Component {...pageProps} key={router.route} />
-      </AnimatePresence>
-      <Background />
-    </ThemeProvider>
+        <Head>
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+          />
+          <meta name="theme-color" content="#000000"></meta>
+        </Head>
+        <Global styles={global} />
+        <Menu />
+        <AnimatePresence
+          exitBeforeEnter
+          onExitComplete={() => window.scrollTo(0, 0)}
+        >
+          <Component {...pageProps} key={router.route} />
+        </AnimatePresence>
+        <Background />
+      </ThemeProvider>
+    </>
   )
 }
 
