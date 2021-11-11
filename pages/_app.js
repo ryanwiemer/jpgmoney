@@ -3,7 +3,7 @@ import { Global } from '@emotion/react'
 import { ThemeProvider, styled } from 'theme-ui'
 import { DefaultSeo } from 'next-seo'
 import Head from 'next/head'
-import Script from 'next/script'
+import { GoogleAnalytics } from 'nextjs-google-analytics'
 import Menu from '../components/Menu'
 import Background from '../components/Background'
 import theme from '../lib/theme'
@@ -20,20 +20,7 @@ const App = ({ Component, pageProps, router }) => {
 
   return (
     <>
-      <Script
-        strategy="lazyOnload"
-        id="GA1"
-        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
-      />
-      <Script id="GA2" strategy="lazyOnload">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', ${process.env.NEXT_PUBLIC_GA_ID});
-        `}
-      </Script>
+      <GoogleAnalytics />
       <ThemeProvider theme={theme}>
         <DefaultSeo
           titleTemplate="%s — JPG Money"
