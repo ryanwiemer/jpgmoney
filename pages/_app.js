@@ -59,9 +59,10 @@ const App = ({ Component, pageProps, router }) => {
       />
       <Script
         strategy="lazyOnload"
+        id="GA1"
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS}`}
       />
-      <Script strategy="lazyOnload">
+      <Script id="GA2" strategy="lazyOnload">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
