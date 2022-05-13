@@ -5,7 +5,11 @@ const withMDX = require('@next/mdx')({ extension: /\.mdx?$/ })
 const nextConfig = {
   images: {
     formats: ['image/avif', 'image/webp'],
-    domains: ['lh3.googleusercontent.com', 'storage.opensea.io'],
+    domains: [
+      'lh3.googleusercontent.com',
+      'storage.opensea.io',
+      'img.seadn.io',
+    ],
   },
 }
 
