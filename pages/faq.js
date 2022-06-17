@@ -91,7 +91,7 @@ export default function faq() {
               Yes. If you would like to make a suggestion please{' '}
               <strong>
                 <a
-                  href="https://github.com/ryanwiemer/jpgcult/issues"
+                  href="https://github.com/ryanwiemer/jpgmoney/issues"
                   target="_blank"
                   rel="noreferrer"
                 >
