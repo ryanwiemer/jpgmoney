@@ -1,6 +1,3 @@
-const withPlugins = require('next-compose-plugins')
-const withMDX = require('@next/mdx')({ extension: /\.mdx?$/ })
-
 // next.js configuration
 const nextConfig = {
   images: {
@@ -9,12 +6,9 @@ const nextConfig = {
       'lh3.googleusercontent.com',
       'storage.opensea.io',
       'img.seadn.io',
+      'i.seadn.io',
     ],
   },
 }
 
-// plugins
-module.exports = withPlugins(
-  [withMDX({ pageExtensions: ['js', 'mdx'] })],
-  nextConfig,
-)
+module.exports = nextConfig
