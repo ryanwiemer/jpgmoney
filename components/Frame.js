@@ -72,11 +72,8 @@ const Frame = props => {
   const rawCrypto = props.saleRawPrice / Math.pow(10, props.saleDecimals)
   const cash = toUSD(rawCrypto, props.saleRate)
   const crypto = formatNumber(rawCrypto)
-
-  const date = new Date(props.saleDate + 'Z')
-  const timeDifference = formatDistanceToNow(date, {
-    includeSeconds: true,
-  })
+  const date =
+    props.saleDate != null ? new Date(props.saleDate.timestamp + 'Z') : null
 
   return (
     <Wrapper>
@@ -109,7 +106,7 @@ const Frame = props => {
             <>
               Sold{' '}
               <OpenSea href={props.link} target="_blank" rel="noreferrer">
-                {timeDifference} ago
+                {formatDistanceToNow(date, { includeSeconds: true })} ago
               </OpenSea>
             </>
           )}
