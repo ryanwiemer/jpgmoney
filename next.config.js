@@ -7,6 +7,7 @@ const nextConfig = {
       'storage.opensea.io',
       'img.seadn.io',
       'i.seadn.io',
+      'openseauserdata.com',
     ],
   },
 }
