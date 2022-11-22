@@ -28,7 +28,6 @@ const variants = {
 }
 
 function Page(props) {
-  console.log(props)
   return (
     <>
       <NextSeo
